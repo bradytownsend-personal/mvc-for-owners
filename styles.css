@@ -1,0 +1,739 @@
+/* ===========================================================
+   MVC Ownership for Owners — styles.css
+   Palette sampled directly from the beach/mountain/city hero image
+   =========================================================== */
+
+:root {
+  --deep-blue: #00419a;
+  --ocean-blue: #0b5fc7;
+  --lagoon: #4fa9a4;
+  --lagoon-bright: #5fb8b3;
+  --sand: #d9ae84;
+  --sand-light: #f2e4cf;
+  --snow: #f5f7fb;
+  --brick: #b5794f;
+  --pine: #1f3b2c;
+  --ink: #10233d;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --max-width: 1180px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--snow);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* -------------------- Signature tri-stripe -------------------- */
+.tri-stripe {
+  height: 6px;
+  display: flex;
+  width: 100%;
+}
+.tri-stripe span { flex: 1; }
+.tri-stripe .s1 { background: var(--sand); }
+.tri-stripe .s2 { background: var(--deep-blue); }
+.tri-stripe .s3 { background: var(--lagoon-bright); }
+
+/* -------------------- Nav -------------------- */
+header.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(16, 35, 61, 0.08);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 32px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.28rem;
+  letter-spacing: 0.01em;
+  color: var(--deep-blue);
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.logo .mark {
+  display: inline-flex;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--sand), var(--deep-blue) 55%, var(--lagoon-bright));
+}
+.logo small {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brick);
+}
+
+nav.links {
+  display: flex;
+  gap: 30px;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+nav.links a {
+  position: relative;
+  padding: 4px 0;
+  color: var(--ink);
+  opacity: 0.82;
+  transition: opacity 0.15s ease;
+}
+nav.links a:hover { opacity: 1; }
+nav.links a::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -3px;
+  height: 2px;
+  background: var(--lagoon-bright);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+nav.links a:hover::after { transform: scaleX(1); }
+
+.nav-cta {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  background: var(--deep-blue);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--ocean-blue); }
+
+.nav-toggle { display: none; }
+
+/* -------------------- Hero -------------------- */
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: flex-end;
+  background-image:
+    linear-gradient(to top, rgba(6, 20, 38, 0.88) 0%, rgba(6, 20, 38, 0.35) 42%, rgba(6, 20, 38, 0.05) 68%),
+    url('images/background_BOS.png');
+  background-size: cover;
+  background-position: center 30%;
+}
+
+.hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 64px 32px 56px;
+  width: 100%;
+  color: #fff;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sand);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before {
+  content: '';
+  width: 26px;
+  height: 1px;
+  background: var(--sand);
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.6rem, 5.4vw, 4.6rem);
+  line-height: 1.03;
+  margin: 0 0 22px;
+  max-width: 15ch;
+  letter-spacing: -0.01em;
+}
+
+.hero p.lede {
+  font-size: 1.12rem;
+  line-height: 1.6;
+  max-width: 46ch;
+  color: rgba(255, 255, 255, 0.86);
+  margin: 0 0 34px;
+  font-weight: 400;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-ctas a {
+  flex: 1 0 calc(33.333% - 16px);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.94rem;
+  padding: 14px 26px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary {
+  background: var(--lagoon-bright);
+  color: #06251f;
+}
+.btn-primary:hover { background: #71c6c1; }
+.btn-ghost {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff;
+}
+.btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+/* -------------------- Intro strip -------------------- */
+.intro-strip {
+  background: var(--sand-light);
+  border-bottom: 1px solid rgba(16,35,61,0.06);
+}
+.intro-strip .wrap {
+  padding: 30px 32px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.intro-strip p {
+  font-family: var(--font-display);
+  font-size: 1.28rem;
+  line-height: 1.45;
+  margin: 0;
+  color: var(--ink);
+  max-width: 62ch;
+}
+.intro-strip p strong { color: var(--deep-blue); }
+
+/* -------------------- Section shell -------------------- */
+section { padding: 88px 0; }
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 44px;
+  flex-wrap: wrap;
+}
+.section-head .eyebrow { color: var(--brick); }
+.section-head .eyebrow::before { background: var(--brick); }
+.section-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  margin: 0;
+  font-weight: 600;
+  color: var(--ink);
+  max-width: 20ch;
+}
+.section-head .sub {
+  max-width: 40ch;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: rgba(16,35,61,0.66);
+  margin: 10px 0 0;
+}
+
+/* -------------------- Three ways cards -------------------- */
+.ways-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.way-card {
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(16,35,61,0.08);
+  display: flex;
+  flex-direction: column;
+}
+.way-card .stripe { height: 5px; }
+.way-card.beach .stripe { background: var(--sand); }
+.way-card.mountain .stripe { background: var(--deep-blue); }
+.way-card.city .stripe { background: var(--lagoon-bright); }
+
+/* Generic tones (used where cards aren't tied to a trip type — e.g. the
+   weeks-usage-options grid) — cycles through the full brand palette. */
+.way-card.tone-a .stripe { background: var(--sand); }
+.way-card.tone-b .stripe { background: var(--deep-blue); }
+.way-card.tone-c .stripe { background: var(--lagoon-bright); }
+.way-card.tone-d .stripe { background: var(--brick); }
+.way-card.tone-e .stripe { background: var(--pine); }
+.way-card.tone-f .stripe { background: var(--ocean-blue); }
+
+.way-card .body { padding: 28px 26px 30px; flex: 1; display: flex; flex-direction: column; }
+.way-card .tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.way-card.beach .tag { color: var(--brick); }
+.way-card.mountain .tag { color: var(--deep-blue); }
+.way-card.city .tag { color: var(--lagoon); }
+.way-card.tone-a .tag { color: var(--brick); }
+.way-card.tone-b .tag { color: var(--deep-blue); }
+.way-card.tone-c .tag { color: var(--lagoon); }
+.way-card.tone-d .tag { color: var(--brick); }
+.way-card.tone-e .tag { color: var(--pine); }
+.way-card.tone-f .tag { color: var(--ocean-blue); }
+
+.way-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.32rem;
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+.way-card p {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: rgba(16,35,61,0.7);
+  margin: 0 0 18px;
+  flex: 1;
+}
+.way-card .link {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--deep-blue);
+}
+.way-card .link:hover { text-decoration: underline; }
+
+/* Standalone version of the same link style, for use outside cards */
+a.link {
+  display: inline-block;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--deep-blue);
+}
+a.link:hover { text-decoration: underline; }
+
+/* -------------------- Guides grid -------------------- */
+.guides-section { background: #fff; border-top: 1px solid rgba(16,35,61,0.06); border-bottom: 1px solid rgba(16,35,61,0.06); }
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(16,35,61,0.08);
+  border: 1px solid rgba(16,35,61,0.08);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.guide-card {
+  background: #fff;
+  padding: 30px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: background 0.15s ease;
+}
+.guide-card:hover { background: var(--snow); }
+.guide-card .cat {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brick);
+  font-weight: 600;
+}
+.guide-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.14rem;
+  margin: 0;
+  line-height: 1.35;
+  font-weight: 600;
+}
+.guide-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(16,35,61,0.66);
+  margin: 0;
+}
+.guide-card .read {
+  margin-top: auto;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--deep-blue);
+}
+
+/* -------------------- Inner page hero (shared) -------------------- */
+.page-hero {
+  background: var(--sand-light);
+  border-bottom: 1px solid rgba(16,35,61,0.08);
+  padding: 56px 0 40px;
+}
+.page-hero .eyebrow { color: var(--brick); }
+.page-hero .eyebrow::before { background: var(--brick); }
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4vw, 3rem);
+  margin: 10px 0 14px;
+  font-weight: 600;
+  color: var(--ink);
+  max-width: 22ch;
+}
+.page-hero p.sub {
+  max-width: 60ch;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: rgba(16,35,61,0.68);
+  margin: 0;
+}
+
+/* -------------------- Prose content -------------------- */
+.prose { max-width: 72ch; }
+.prose p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(16,35,61,0.78);
+  margin: 0 0 18px;
+}
+.prose p:last-child { margin-bottom: 0; }
+.prose ul, .prose ol {
+  margin: 0 0 18px;
+  padding-left: 22px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(16,35,61,0.78);
+}
+.prose li { margin-bottom: 8px; }
+.prose strong { color: var(--ink); }
+
+.term-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+.term-list > li {
+  border: 1px solid rgba(16,35,61,0.1);
+  border-radius: 6px;
+  padding: 16px 18px;
+  background: var(--snow);
+}
+.term-list .term-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: var(--ink);
+  display: block;
+  margin-bottom: 4px;
+}
+.term-list .term-def {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(16,35,61,0.7);
+}
+
+/* A term-def is usually a plain inline span, but a few entries (like
+   Inventory) need a paragraph + list — those use a div instead so the
+   block content below is valid, and get this extra spacing/bullet styling. */
+div.term-def p {
+  margin: 0 0 10px;
+}
+div.term-def p:last-child {
+  margin-bottom: 0;
+}
+div.term-def ul {
+  margin: 0;
+  padding-left: 20px;
+}
+div.term-def li {
+  margin-bottom: 8px;
+}
+div.term-def li:last-child {
+  margin-bottom: 0;
+}
+div.term-def ul ul {
+  margin-top: 6px;
+  padding-left: 20px;
+}
+div.term-def strong {
+  color: var(--ink);
+}
+
+/* -------------------- Glossary quick-links -------------------- */
+.glossary-quicklinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 32px;
+  padding: 0;
+}
+.quicklink-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 36px;
+  min-width: 36px;
+  max-width: 44px;
+  height: 36px;
+  padding: 0 6px;
+  border: 1px solid rgba(16,35,61,0.15);
+  border-radius: 4px;
+  background: var(--snow);
+  color: var(--deep-blue);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.quicklink-box:hover {
+  background: var(--deep-blue);
+  border-color: var(--deep-blue);
+  color: #fff;
+}
+
+/* Empty markers the quick-links jump to — offset for the sticky header
+   so the target term isn't hidden underneath it when scrolled into view. */
+.glossary-anchor {
+  scroll-margin-top: 96px;
+}
+
+@media (max-width: 560px) {
+  .quicklink-box { flex: 1 1 28px; height: 32px; font-size: 0.76rem; }
+}
+
+.checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: step;
+  display: grid;
+  gap: 14px;
+}
+.checklist li {
+  counter-increment: step;
+  position: relative;
+  padding: 14px 18px 14px 52px;
+  border: 1px solid rgba(16,35,61,0.1);
+  border-radius: 6px;
+  background: #fff;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: rgba(16,35,61,0.78);
+}
+.checklist li::before {
+  content: counter(step);
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--deep-blue);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* -------------------- Next-steps band -------------------- */
+.next-band {
+  background: var(--deep-blue);
+  background-image: linear-gradient(120deg, var(--deep-blue) 0%, #0a3576 100%);
+  color: #fff;
+}
+.next-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.next-inner h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+  margin: 0 0 8px;
+  font-weight: 600;
+  max-width: 22ch;
+}
+.next-inner p {
+  margin: 0;
+  color: rgba(255,255,255,0.78);
+  max-width: 42ch;
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+.next-links { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* -------------------- CTA / signup band -------------------- */
+.signup-band {
+  background: var(--deep-blue);
+  background-image: linear-gradient(120deg, var(--deep-blue) 0%, #0a3576 100%);
+  color: #fff;
+}
+.signup-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.signup-inner h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 2.6vw, 2.2rem);
+  margin: 0 0 10px;
+  font-weight: 600;
+  max-width: 16ch;
+}
+.signup-inner p {
+  margin: 0;
+  color: rgba(255,255,255,0.78);
+  max-width: 40ch;
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+.signup-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.signup-form input[type="email"] {
+  font-family: var(--font-body);
+  padding: 13px 16px;
+  border-radius: 3px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 0.92rem;
+  min-width: 240px;
+}
+.signup-form input[type="email"]::placeholder { color: rgba(255,255,255,0.55); }
+.signup-form input[type="email"]:focus {
+  outline: 2px solid var(--lagoon-bright);
+  outline-offset: 1px;
+  background: rgba(255,255,255,0.12);
+}
+.signup-form .btn-primary { border-radius: 3px; }
+
+/* -------------------- Footer -------------------- */
+footer.site-footer {
+  background: var(--pine);
+  color: rgba(255,255,255,0.82);
+  padding-top: 56px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 32px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.footer-brand .logo { color: #fff; }
+.footer-brand p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.6);
+  max-width: 32ch;
+  margin-top: 14px;
+}
+.footer-col h4 {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--sand);
+  margin: 0 0 16px;
+  font-weight: 600;
+}
+.footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a { font-size: 0.88rem; color: rgba(255,255,255,0.75); }
+.footer-col a:hover { color: #fff; }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 0;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+  flex-wrap: wrap;
+}
+.footer-bottom p { margin: 0; max-width: 62ch; line-height: 1.6; }
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 880px) {
+  nav.links, .nav-cta { display: none; }
+  .ways-grid { grid-template-columns: 1fr; }
+  .guides-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .signup-inner, .next-inner { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 560px) {
+  .wrap, .nav, .hero-inner { padding-left: 20px; padding-right: 20px; }
+  section { padding: 60px 0; }
+  .footer-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--lagoon-bright);
+  outline-offset: 2px;
+}

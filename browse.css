@@ -1,0 +1,230 @@
+/* ===========================================================
+   Resort Browser — browse.css
+   =========================================================== */
+
+.browse-hero {
+  background: var(--sand-light);
+  border-bottom: 1px solid rgba(16,35,61,0.08);
+  padding: 56px 0 40px;
+}
+.browse-hero .eyebrow { color: var(--brick); }
+.browse-hero .eyebrow::before { background: var(--brick); }
+.browse-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4vw, 3rem);
+  margin: 10px 0 14px;
+  font-weight: 600;
+  color: var(--ink);
+  max-width: 18ch;
+}
+.browse-hero p.sub {
+  max-width: 56ch;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: rgba(16,35,61,0.68);
+  margin: 0;
+}
+
+.browse-section { padding: 48px 0 96px; }
+
+.browse-shell {
+  border: 1px solid rgba(16,35,61,0.1);
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.browse-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 24px;
+  background: var(--snow);
+  border-bottom: 1px solid rgba(16,35,61,0.08);
+  flex-wrap: wrap;
+}
+
+.breadcrumb {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(16,35,61,0.55);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.breadcrumb .crumb-current { color: var(--deep-blue); font-weight: 600; }
+.breadcrumb .sep { opacity: 0.4; }
+
+.toolbar-actions { display: flex; gap: 10px; }
+
+.btn-back, .btn-start-over {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--deep-blue);
+  background: #fff;
+  border: 1px solid rgba(16,35,61,0.14);
+  border-radius: 3px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+.btn-back:hover, .btn-start-over:hover { background: var(--sand-light); border-color: var(--deep-blue); }
+.btn-back { display: none; }
+.btn-back.visible { display: inline-flex; }
+
+.browse-content {
+  padding: 32px 24px 40px;
+  min-height: 260px;
+}
+
+/* -------------------- Choice grids -------------------- */
+.browse-grid {
+  display: grid;
+  gap: 16px;
+}
+.browse-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.browse-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.browse-grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+.browse-tile {
+  text-align: left;
+  background: var(--snow);
+  border: 1px solid rgba(16,35,61,0.1);
+  border-radius: 6px;
+  padding: 20px 20px 18px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+}
+.browse-tile:hover {
+  background: #fff;
+  border-color: var(--deep-blue);
+  transform: translateY(-2px);
+}
+.browse-tile-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.browse-tile-title {
+  font-family: var(--font-display);
+  font-size: 1.14rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.browse-tile-count {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--brick);
+  background: var(--sand-light);
+  border-radius: 3px;
+  padding: 2px 8px;
+  white-space: nowrap;
+}
+.browse-tile-sub {
+  margin: 8px 0 0;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: rgba(16,35,61,0.62);
+}
+
+/* -------------------- Result listing -------------------- */
+.browse-result-heading {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: var(--ink);
+}
+.browse-flag-note {
+  font-size: 0.86rem;
+  color: rgba(16,35,61,0.6);
+  font-style: italic;
+  margin: 0 0 24px;
+}
+.browse-result-heading + .resort-groups { margin-top: 24px; }
+
+.resort-groups {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 32px;
+}
+
+/* Brand results: one long alphabetized list rather than grouped columns —
+   flow it into balanced newspaper-style columns instead of a 2-col grid. */
+.resort-groups.flat {
+  display: block;
+}
+.resort-groups.flat .resort-group-list {
+  column-count: 2;
+  column-gap: 32px;
+}
+.resort-groups.flat .resort-group-list li {
+  break-inside: avoid;
+}
+
+.resort-group-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--deep-blue);
+  margin: 0 0 8px;
+}
+
+.resort-group-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(16,35,61,0.08);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.resort-group-list li {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(16,35,61,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #fff;
+}
+.resort-group-list li:last-child { border-bottom: none; }
+.resort-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.resort-link {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  color: var(--deep-blue);
+  border: 1px solid rgba(11,95,199,0.3);
+  border-radius: 3px;
+  padding: 4px 8px;
+  white-space: nowrap;
+  flex: 0 0 auto;
+  text-decoration: none;
+}
+.resort-link:hover { background: var(--sand-light); border-color: var(--deep-blue); }
+
+@media (max-width: 880px) {
+  .browse-grid-3, .browse-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .resort-groups { grid-template-columns: 1fr; }
+  .resort-groups.flat .resort-group-list { column-count: 1; }
+}
+@media (max-width: 560px) {
+  .browse-grid-2, .browse-grid-3, .browse-grid-4 { grid-template-columns: 1fr; }
+  .browse-toolbar { padding: 12px 16px; }
+  .browse-content { padding: 24px 16px 32px; }
+}

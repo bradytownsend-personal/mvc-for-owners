@@ -43,15 +43,35 @@
 
   <section>
     <div class="wrap">
-      <div class="prose">
-        <p><strong>This guide is still being written.</strong> Here's what it's planned to cover:</p>
-        <ul>
-          <li>Booking windows by ownership type — weeks vs. points</li>
-          <li>What "12-month" and "13-month" booking actually mean for you</li>
-          <li>Peak season timing across coastal, mountain, city, and theme-park resorts</li>
-          <li>What to do if the dates you want aren't available</li>
-        </ul>
-        <p>Check back soon — or in the meantime, the pages linked below cover related ground.</p>
+      <div class="content-tabs" role="tablist" aria-label="Booking guide reservation type">
+        <button class="content-tab is-active" data-tab-target="points" role="tab" aria-selected="true" type="button">Points Reservation</button>
+        <button class="content-tab" data-tab-target="week" role="tab" aria-selected="false" type="button">Week Reservation</button>
+      </div>
+
+      <div class="content-panel" data-tab-panel="points">
+        <div class="prose">
+          <p><strong>This section is still being written.</strong> Here's what it's planned to cover:</p>
+          <ul>
+            <li>Home resort priority window vs. system-wide booking window, and when each opens</li>
+            <li>What "12-month" and "13-month" booking actually mean for points owners</li>
+            <li>Peak season timing across coastal, mountain, city, and theme-park resorts</li>
+            <li>What to do if the dates you want aren't available</li>
+          </ul>
+          <p>Check back soon — or in the meantime, the pages linked below cover related ground.</p>
+        </div>
+      </div>
+
+      <div class="content-panel" data-tab-panel="week" hidden>
+        <div class="prose">
+          <p><strong>This section is still being written.</strong> Here's what it's planned to cover:</p>
+          <ul>
+            <li>Booking windows for fixed vs. float weeks</li>
+            <li>How far in advance to plan for peak season at your home resort</li>
+            <li>What happens if your usual dates aren't available</li>
+            <li>When to consider depositing into Interval instead of booking direct</li>
+          </ul>
+          <p>Check back soon — or in the meantime, the pages linked below cover related ground.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -112,5 +132,6 @@
   </div>
 </footer>
 
+<script src="content-tabs.js"></script>
 </body>
 </html>

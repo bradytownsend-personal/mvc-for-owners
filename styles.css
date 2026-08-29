@@ -453,6 +453,14 @@ a.link:hover { text-decoration: underline; }
 }
 .prose li { margin-bottom: 8px; }
 .prose strong { color: var(--ink); }
+.prose h3 {
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 34px 0 12px;
+}
+.prose h3:first-child { margin-top: 0; }
 
 .term-list {
   list-style: none;
@@ -605,6 +613,34 @@ div.term-def strong {
   align-items: center;
   justify-content: center;
 }
+
+/* -------------------- Content tabs (shared) -------------------- */
+.content-tabs {
+  display: flex;
+  gap: 12px;
+  margin: 0 0 28px;
+  border-bottom: 1px solid rgba(16,35,61,0.1);
+  flex-wrap: wrap;
+}
+.content-tab {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.94rem;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: rgba(16,35,61,0.55);
+  padding: 10px 4px 12px;
+  margin-bottom: -1px;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.content-tab:hover { color: var(--ink); }
+.content-tab.is-active {
+  color: var(--deep-blue);
+  border-bottom-color: var(--lagoon-bright);
+}
+.content-panel[hidden] { display: none; }
 
 /* -------------------- Next-steps band -------------------- */
 .next-band {

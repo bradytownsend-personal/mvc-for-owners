@@ -462,6 +462,41 @@ a.link:hover { text-decoration: underline; }
 }
 .prose h3:first-child { margin-top: 0; }
 
+.prose .table-wrap {
+  overflow-x: auto;
+  border: 1px solid rgba(16,35,61,0.1);
+  border-radius: 6px;
+  margin: 0 0 18px;
+}
+.prose table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88rem;
+}
+.prose table th,
+.prose table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid rgba(16,35,61,0.08);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.prose table thead th {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(16,35,61,0.55);
+  background: var(--snow);
+  border-bottom: 1px solid rgba(16,35,61,0.12);
+}
+.prose table tbody tr:last-child td { border-bottom: none; }
+.prose table td:first-child {
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
 .term-list {
   list-style: none;
   margin: 0;

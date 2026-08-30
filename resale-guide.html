@@ -43,15 +43,45 @@
 
   <section>
     <div class="wrap">
-      <div class="prose">
-        <p><strong>This guide is still being written.</strong> Here's what it's planned to cover:</p>
-        <ul>
-          <li>How resale pricing compares to developer pricing, resort by resort</li>
-          <li>What actually holds resale value — season, size, view, and resort demand</li>
-          <li>Where to find legitimate resale listings</li>
-          <li>Red flags worth watching for in a resale transaction</li>
-        </ul>
-        <p>Check back soon — or in the meantime, the pages linked below cover related ground.</p>
+      <div class="content-tabs" role="tablist" aria-label="Resale guide topic">
+        <button class="content-tab is-active" data-tab-target="buying" role="tab" aria-selected="true" type="button">Buying Resale</button>
+        <button class="content-tab" data-tab-target="selling" role="tab" aria-selected="false" type="button">Selling Resale</button>
+      </div>
+
+      <div class="content-panel" data-tab-panel="buying">
+        <div class="prose">
+          <p>When buying resale, you'll have options to purchase weeks or points. You need to choose the ownership type that fits your travel expectations — review the <a class="link" href="weeks.html">Weeks</a> and <a class="link" href="points.html">Points</a> pages to understand what each means. Buying points is fairly simple: decide how many points you want, then find a listing and make an offer. For a week, you need to know which resort you want to travel to regularly (or one that's a great exchange), which villa size, and which view.</p>
+
+          <h3>Right of First Refusal</h3>
+          <p>MVC holds a <a class="link" href="glossary.html#term-rofr">Right of First Refusal (ROFR)</a> on all points sales and most, but not all, week resale units. Once a price is agreed between buyer and seller, the seller must submit a ROFR request to MVC. Each resort has different rules for how long MVC is allowed to take to respond. MVC reviews the unit and price and decides whether to step in and become the buyer instead of allowing the private sale to go through.</p>
+          <p>There's no way to know in advance what price will pass ROFR. You can use <a class="link" href="https://www.rofr.net" target="_blank" rel="noopener noreferrer">rofr.net</a> as a sample of real data — "pass" means the private sale was allowed, "fail" means MVC stepped in to buy at that price. MVC also has a budget for what they can spend each quarter, so it's possible for the same price to fail one day and pass another.</p>
+
+          <h3>Do you lose any benefits buying resale?</h3>
+          <p>Some people worry they won't have the same benefits buying resale as buying direct. For points, MVC charges the buyer $3 per point (minimum $3,000) to add those points into your account — that fee is what makes the points equal to all the benefits of a direct owner. For weeks, MVC charges a transfer fee that gets included in the closing costs of the purchase; that's what gets the week into your MVC account.</p>
+          <p>The real drawback: a resale MVC week cannot be <a class="link" href="glossary.html#term-elect">enrolled</a> into Abound (points), unless you later purchase points directly from MVC — usually a 3,000-point minimum. There are other limitations too, like not being able to elect <a class="link" href="glossary.html#term-bonvoy">Bonvoy</a> points instead of using your week — though that's not a recommended use of a week anyway, since the conversion value isn't good.</p>
+
+          <h3>Where to find listings</h3>
+          <p>There are a lot of places to look. Redweek is a common website. There are several active Facebook groups. <a class="link" href="glossary.html#term-tugbbs">TUG</a> Marketplace is another option. There are also several timeshare-specific realty sites on the web — I personally purchased through Concierge Realty (I'm not affiliated).</p>
+        </div>
+      </div>
+
+      <div class="content-panel" data-tab-panel="selling" hidden>
+        <div class="prose">
+          <p>If you've decided to sell all or part of your ownership, hopefully you have good options. Worst case, you can deed back whatever you own to MVC, which may cost a small fee to do. Best case, your ownership has good value and you'll recoup some of what you paid. Most likely, you fall somewhere in the middle.</p>
+
+          <h3>Know what your resale is actually worth</h3>
+          <p>With few exceptions, resale value is a small fraction of what MVC originally sold it for at retail. Some resort weeks will have very low value, or even $0; others will hold good value. If you price it too high, you won't get any consideration — same as selling a home or a car. Look online at resale sites and use <a class="link" href="https://www.rofr.net" target="_blank" rel="noopener noreferrer">rofr.net</a> to get an idea of what price to use in your listing.</p>
+          <p>As an example: a Platinum 2-BDRM unit at Fairway Villas may be worth $0, whereas a Platinum 2-BDRM Oceanview unit at Aruba Surf Club may be worth $30,000+. Do your research before you list.</p>
+
+          <h3>Pay off any loan first</h3>
+          <p>Hopefully this is obvious, but you shouldn't have a loan on the unit or points you're trying to sell. It's unlikely the sale price would even cover the cost of the loan anyway.</p>
+
+          <h3>Handling the paperwork</h3>
+          <p>If you go through a vendor like Redweek or a realty company, they can handle all the paperwork and process for you — that costs you, as part of their commission or associated fees. If you attempt to sell on your own, you still need to go through the same process, so it's wise to coordinate with a timeshare closing company that can handle it for you. American Title and LT Transfers are commonly mentioned across different MVC forums, but you should find the right one for your situation.</p>
+
+          <h3>What if MVC exercises ROFR on your sale?</h3>
+          <p>This means MVC steps in and becomes the buyer at the same agreed price. In the end, you get the same price for the sale either way, which is good for you. What might change is the time it takes to close — owners have mentioned MVC taking a long time to process the deal on some occasions.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -112,5 +142,6 @@
   </div>
 </footer>
 
+<script src="content-tabs.js"></script>
 </body>
 </html>

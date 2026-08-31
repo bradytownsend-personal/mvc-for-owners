@@ -43,15 +43,40 @@
 
   <section>
     <div class="wrap">
-      <div class="prose">
-        <p><strong>This guide is still being written.</strong> Here's what it's planned to cover:</p>
-        <ul>
-          <li>What's actually allowed under your resort's specific rental rules</li>
-          <li>Realistic income expectations by season and resort</li>
-          <li>Where owners typically list a week or points for rent</li>
-          <li>Limitations to plan around — taxes, platform fees, and owner-of-record issues</li>
-        </ul>
-        <p>Check back soon — or in the meantime, the pages linked below cover related ground.</p>
+      <div class="content-tabs" role="tablist" aria-label="Rental guide topic">
+        <button class="content-tab is-active" data-tab-target="renting-out" role="tab" aria-selected="true" type="button">Renting Out Yours</button>
+        <button class="content-tab" data-tab-target="renting-from" role="tab" aria-selected="false" type="button">Renting From Owner</button>
+      </div>
+
+      <div class="content-panel" data-tab-panel="renting-out">
+        <div class="prose">
+          <p>Have you decided to take a different type of vacation, or you just can't take the trip? If you don't want to use Interval and just want to recoup some cash, <a class="link" href="glossary.html#term-rental">rental</a> may be right for you. There are a lot of different ways you can choose to rent.</p>
+
+          <h3>Your options</h3>
+          <p>You can rent a reservation you've already made as the owner. More desirable dates will rent easier and can command a higher rental fee. You could also rent out unused points to another owner — the points need to be original use-year points, never banked or borrowed. If they are, you can post them for rent. The catch: most owners won't want to pay more than a few cents over the current year's MF per point, so you won't get a great return.</p>
+          <p>Another option is MVC's own rental program. This isn't a recommended route — MVC takes a large percentage of the rental, and you'll most likely lose money for the year on the transaction.</p>
+
+          <h3>Don't skip the Guest Information document</h3>
+          <p>If you do rent out a reservation, you'll need to go to the owners' website and find that reservation in your account. There's a link to complete the Guest Information document. The rules require you to fill this out at least 60 days ahead of the reservation. Without it — with your renter's info on file — the renter won't be able to check in at the resort. This is important; don't skip it.</p>
+
+          <h3>Where to list it</h3>
+          <p>The same sites used for resale are popular for rentals too — Redweek, Vacation Candy, Facebook, <a class="link" href="glossary.html#term-tugbbs">TUG</a>, realty sites, and more. Fees differ from one to the next, so check them out and find the best path for you.</p>
+        </div>
+      </div>
+
+      <div class="content-panel" data-tab-panel="renting-from" hidden>
+        <div class="prose">
+          <p>Want to take another vacation this year, but you've already used your MVC ownership? Consider looking for a rental to find the trip you want. Just because you're an owner doesn't mean you can't also be a renter.</p>
+
+          <h3>Where to look</h3>
+          <p>The same sites used for resale are popular for rentals too — Redweek, Vacation Candy, Facebook, <a class="link" href="glossary.html#term-tugbbs">TUG</a>, realty sites, and more. Posted rental rates are potentially negotiable, so try to find what works for both you and the renter.</p>
+
+          <h3>Watch for scams</h3>
+          <p>Be cautious when renting, especially on sites that aren't guaranteed to be verified rental platforms — Facebook is probably the most common place to run into scams. Validate the reservation directly with MVC and Marriott, by phone and by using the reservation lookup option on Marriott's site. Also remember: you can't check in unless the renter has added your information to the Guest Information document. If they don't ask you for those details, be suspicious.</p>
+
+          <h3>Renting points</h3>
+          <p>If you're renting points, this is best handled with a 3-way call between you, the renter, and MVC Owner Services. On that call, the renter tells the associate how many points they'd like to transfer to you, you provide your account info, and the associate transfers the points from one account to the other. That's the short version — there's a bit more to the actual process.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -112,5 +137,6 @@
   </div>
 </footer>
 
+<script src="content-tabs.js"></script>
 </body>
 </html>

@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Browse the Resorts — MVC Ownership for Owners</title>
-<meta name="description" content="Browse Marriott Vacation Club resorts by location or by category — drill down from region to state to resort.">
+<title>Contact Us — MVC Ownership for Owners</title>
+<meta name="description" content="Get in touch with MVC Ownership for Owners.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="browse.css">
 </head>
 <body>
 
@@ -35,31 +34,46 @@
 
 <main>
 
-  <section class="browse-hero">
+  <section class="page-hero">
     <div class="wrap">
-      <p class="eyebrow">Portfolio, your way</p>
-      <h1>Browse the resorts</h1>
-      <p class="sub">Search by location or by the kind of trip you're after — pick a starting point below, then narrow it down. Each resort links out to its official page.</p>
+      <p class="eyebrow">Get in touch</p>
+      <h1>Contact us</h1>
+      <p class="sub">Questions, corrections, or something you think belongs on this site? Use one of the options below to send us your feedback. And, thank you!</p>
     </div>
   </section>
 
-  <section class="browse-section">
-    <div class="wrap">
-      <div class="browse-shell" id="browse-shell">
+<section>
+  <div class="wrap">
+    <div class="prose">
+      <form name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact">
 
-        <div class="browse-toolbar">
-          <div class="breadcrumb" id="breadcrumb"></div>
-          <div class="toolbar-actions">
-            <button class="btn-back" id="btn-back" type="button">&larr; Back</button>
-            <button class="btn-start-over" id="btn-start-over" type="button">Start over</button>
-          </div>
-        </div>
+        <h2>Send a message</h2>
 
-        <div class="browse-content" id="browse-content"></div>
+        <label>
+          Subject<br>
+          <input type="text" name="subject" required style="width:70%"><br><br>
+        </label>
 
-      </div>
+        <label>
+          Contact email (optional)<br>
+          <input type="email" name="email" placeholder="you@example.com" style="width:50%"><br>
+          <small>Note: If you leave this blank, I have no way to collaborate with you.</small><br><br>
+        </label>
+
+        <label>
+          Detailed comment or request<br>
+          <textarea name="comments" rows="6" required style="width:100%"></textarea>
+        </label>
+
+        <button type="submit">Submit</button><br><br><br>
+        
+        <h3>Or, email us directly at <span style="color: #4fa9a4;"><a href="mailto:mvcforowners@gmail.com">mvcforowners@gmail.com</a></span>.</h3>
+      </form>
     </div>
-  </section>
+  </div>
+</section>
+
 
 </main>
 
@@ -103,6 +117,5 @@
   </div>
 </footer>
 
-<script src="browse.js"></script>
 </body>
 </html>

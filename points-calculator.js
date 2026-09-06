@@ -32,6 +32,15 @@ function parseInputDate(str) {
   return new Date(y, m - 1, d);
 }
 
+// Local Date -> "2026-02-06" string, for writing back into an
+// <input type="date"> value (the reverse of parseInputDate).
+function formatInputDate(date) {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, "0");
+  const d = String(date.getDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
+}
+
 const DOW = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 function fmtDate(d) {
   return `${DOW[d.getDay()]}, ${d.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })}`;
@@ -180,6 +189,31 @@ function renderResults() {
 
 document.addEventListener("DOMContentLoaded", () => {
   populateResortSelect("calc-resort");
+
+  const checkinField = document.getElementById("calc-checkin");
+  const checkoutField = document.getElementById("calc-checkout");
+
+  // When check-in changes, jump the check-out picker to the day right
+  // after it — otherwise the native calendar opens on today's month,
+  // which can be many months of scrolling away from a future check-in.
+  // Only auto-set it when check-out is empty or no longer makes sense
+  // (on or before the new check-in), so we don't clobber a longer stay
+  // the user already chose.
+  checkinField.addEventListener("change", () => {
+    if (!checkinField.value) return;
+    const checkIn = parseInputDate(checkinField.value);
+    const dayAfter = new Date(checkIn);
+    dayAfter.setDate(dayAfter.getDate() + 1);
+    const dayAfterStr = formatInputDate(dayAfter);
+
+    checkoutField.min = dayAfterStr;
+
+    const currentCheckout = checkoutField.value ? parseInputDate(checkoutField.value) : null;
+    if (!currentCheckout || currentCheckout <= checkIn) {
+      checkoutField.value = dayAfterStr;
+    }
+  });
+
   ["calc-points", "calc-checkin", "calc-checkout", "calc-resort"].forEach((id) => {
     const field = document.getElementById(id);
     field.addEventListener("input", renderResults);
